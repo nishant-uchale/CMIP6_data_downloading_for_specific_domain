@@ -9,6 +9,9 @@
 # Go to the data directory (change this according to your data directory
 cd "<PATH>"
 
+# Load NCO module
+module load <available NCO module in your system>
+
 # Extracting only links from CMIP wget scripts and storing in .txt file so that file names can be extracted fromm here
 grep -o -h -s "<Modify the link as given in the wget files>/[^']*" *.sh > outputlink.txt
 
