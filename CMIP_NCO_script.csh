@@ -7,16 +7,16 @@
 # Revision history: 
 
 # Go to the data directory (change this according to your data directory
-cd /scratch/vishald/jrf2_monsoonlab/nishant/CMIP_data/
+cd "<PATH>"
 
 # Extracting only links from CMIP wget scripts and storing in .txt file so that file names can be extracted fromm here
-grep -o -h -s "https://esgf-data2.llnl.gov/thredds/fileServer/user_pub_work/CMIP6/CMIP/[^']*" *.sh > outputlink.txt
+grep -o -h -s "<Modify the link as given in the wget files>/[^']*" *.sh > outputlink.txt
 
 # Extracting only links from CMIP wget scripts and storing in my_array1
 my_array1=()
 while IFS= read -r line; do
     my_array1+=( "$line" )
-done < <( grep -o -h -s "https://esgf-data2.llnl.gov/thredds/fileServer/user_pub_work/CMIP6/CMIP/[^']*" *.sh )
+done < <( grep -o -h -s "<Modify the link as given in the wget files>/[^']*" *.sh )
 
 
 # Extracting file names from links in .txt file and storing in my_array2
